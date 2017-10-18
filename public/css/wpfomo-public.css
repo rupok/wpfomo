@@ -1,4 +1,42 @@
-/**
- * All of the CSS for your public-facing functionality should be
- * included in this file.
- */
+#fomo {
+  padding: 10px 0;
+  position: fixed;
+  bottom: -110px;
+  left: 15px;
+  height: 75px;
+  width: 400px;
+  border: 3px solid #f4f4f4;
+  transition: all 400ms;
+}
+#fomo.is-visible {
+  bottom: 15px;
+  left: 15px;
+}
+#fomo .product_image {
+  width: 22%;
+  height: 100%;
+  border-right: 3px solid #f4f4f4;
+}
+#fomo .wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 75%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 25%;
+  padding-left: 10px;
+}
+#fomo .wrapper .buyer {
+  font-size: 13px;
+}
+#fomo .wrapper .product_name {
+  font-weight: 600;
+  text-decoration: none;
+  color: #00bf42;
+  line-height: 2;
+}
+#fomo .wrapper .time {
+  font-size: 13px;
+}

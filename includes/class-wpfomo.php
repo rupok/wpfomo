@@ -67,8 +67,8 @@ class Wpfomo {
 	 * @since    1.0.0
 	 */
 	public function __construct() {
-		if ( defined( 'PLUGIN_NAME_VERSION' ) ) {
-			$this->version = PLUGIN_NAME_VERSION;
+		if ( defined( 'WPFOMO_VERSION' ) ) {
+			$this->version = WPFOMO_VERSION;
 		} else {
 			$this->version = '1.0.0';
 		}
@@ -121,6 +121,10 @@ class Wpfomo {
 		 * side of the site.
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-wpfomo-public.php';
+		/**
+		 * This file provides a public-facing view for the plugin
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/partials/wpfomo-public-display.php';
 
 		$this->loader = new Wpfomo_Loader();
 
