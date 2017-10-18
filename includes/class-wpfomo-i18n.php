@@ -9,8 +9,8 @@
  * @link       https://wpdeveloper.net
  * @since      1.0.0
  *
- * @package    Wp_Fomo
- * @subpackage Wp_Fomo/includes
+ * @package    Wpfomo
+ * @subpackage Wpfomo/includes
  */
 
 /**
@@ -20,11 +20,11 @@
  * so that it is ready for translation.
  *
  * @since      1.0.0
- * @package    Wp_Fomo
- * @subpackage Wp_Fomo/includes
+ * @package    Wpfomo
+ * @subpackage Wpfomo/includes
  * @author     WP Developer <support@wpdeveloper.net>
  */
-class Wp_Fomo_i18n {
+class Wpfomo_i18n {
 
 
 	/**
@@ -35,7 +35,7 @@ class Wp_Fomo_i18n {
 	public function load_plugin_textdomain() {
 
 		load_plugin_textdomain(
-			'wp-fomo',
+			'wpfomo',
 			false,
 			dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages/'
 		);

@@ -6,7 +6,7 @@
  * @link       https://wpdeveloper.net
  * @since      1.0.0
  *
- * @package    Wp_Fomo
+ * @package    Wpfomo
  */
 
 // If uninstall not called from WordPress, then exit.

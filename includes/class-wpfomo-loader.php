@@ -6,8 +6,8 @@
  * @link       https://wpdeveloper.net
  * @since      1.0.0
  *
- * @package    Wp_Fomo
- * @subpackage Wp_Fomo/includes
+ * @package    Wpfomo
+ * @subpackage Wpfomo/includes
  */
 
 /**
@@ -17,11 +17,11 @@
  * the plugin, and register them with the WordPress API. Call the
  * run function to execute the list of actions and filters.
  *
- * @package    Wp_Fomo
- * @subpackage Wp_Fomo/includes
+ * @package    Wpfomo
+ * @subpackage Wpfomo/includes
  * @author     WP Developer <support@wpdeveloper.net>
  */
-class Wp_Fomo_Loader {
+class Wpfomo_Loader {
 
 	/**
 	 * The array of actions registered with WordPress.

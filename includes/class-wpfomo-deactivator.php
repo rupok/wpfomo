@@ -6,8 +6,8 @@
  * @link       https://wpdeveloper.net
  * @since      1.0.0
  *
- * @package    Wp_Fomo
- * @subpackage Wp_Fomo/includes
+ * @package    Wpfomo
+ * @subpackage Wpfomo/includes
  */
 
 /**
@@ -16,11 +16,11 @@
  * This class defines all code necessary to run during the plugin's deactivation.
  *
  * @since      1.0.0
- * @package    Wp_Fomo
- * @subpackage Wp_Fomo/includes
+ * @package    Wpfomo
+ * @subpackage Wpfomo/includes
  * @author     WP Developer <support@wpdeveloper.net>
  */
-class Wp_Fomo_Deactivator {
+class Wpfomo_Deactivator {
 
 	/**
 	 * Short Description. (use period)

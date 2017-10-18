@@ -8,8 +8,8 @@
  * @link       https://wpdeveloper.net
  * @since      1.0.0
  *
- * @package    Wp_Fomo
- * @subpackage Wp_Fomo/public/partials
+ * @package    Wpfomo
+ * @subpackage Wpfomo/public/partials
  */
 ?>
 
