@@ -8,7 +8,7 @@
  * @wordpress-plugin
  * Plugin Name:       WPfomo
  * Plugin URI:        https://wpdeveloper.net/wpfomo
- * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
+ * Description:       Show notification on WordPress site.
  * Version:           1.0.0
  * Author:            WP Developer
  * Author URI:        https://wpdeveloper.net
