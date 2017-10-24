@@ -1,46 +1,17 @@
 jQuery(function() {
 
-  var products = [
-    {
-      "buyer_name": "Mike",
-      "purchase_time": "2017/10/18",
-      "product_name": "A cool product",
-      "product_image": "https://cdn.shopify.com/s/files/1/1585/6515/files/smart_thumb.png",
-      "url": "#"
-    },
-    {
-      "buyer_name": "Tom",
-      "purchase_time": "2017/10/18",
-      "product_name": "Another cool product",
-      "product_image": "https://cdn.shopify.com/s/files/1/1585/6515/files/boost_thumb.png",
-      "url": "#"
-    },
-    {
-      "buyer_name": "Vito",
-      "purchase_time": "2017/10/18",
-      "product_name": "Something great",
-      "product_image": "https://cdn.shopify.com/s/files/1/1585/6515/files/relax_thumb.png",
-      "url": "#"
-    },
-    {
-      "buyer_name": "Anthony",
-      "purchase_time": "2017/10/18",
-      "product_name": "One year membership",
-      "product_image": "https://cdn.shopify.com/s/files/1/1585/6515/files/sleep_thumb.png",
-      "url": "#"
-    }
-  ];   
-  
+  console.log( settings );
   getProduct();
   getTime();
   
   // Get and bind the values
   function getProduct() {
-    var num = Math.floor(Math.random() * products.length);
-    jQuery(".wpfomo-buyer-name").text( (products[num].buyer_name) );
-    jQuery(".wpfomo-product-name").text( (products[num].product_name) );
-    jQuery(".wpfomo-product-thumb").attr('src',products[num].product_image);
-    jQuery(".wpfomo-product-name").attr('href', (products[num].url) );
+    var num = Math.floor(Math.random() * settings.buyer_name.length);
+
+    jQuery(".wpfomo-buyer-name").text( (settings.buyer_name[num]) );
+    jQuery(".wpfomo-product-name").text( (settings.product_name[num]) );
+    jQuery(".wpfomo-product-thumb").attr('src',settings.product_image[num]);
+    jQuery(".wpfomo-product-name").attr('href', (settings.custom_url[num]) );
   }
   
   // Random time (temp)
@@ -83,5 +54,5 @@ jQuery(function() {
       getTime();
     }, 500)
   }
-  
+
 });

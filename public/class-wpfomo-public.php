@@ -72,7 +72,22 @@ class Wpfomo_Public {
 	 */
 	public function enqueue_scripts() {
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/wpfomo-public.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( 'wpfomo-public-script', plugin_dir_url( __FILE__ ) . 'js/wpfomo-public.js', array( 'jquery' ), $this->version, false );
+
+		$product_images = get_option( 'wpfomo_product_image' );
+		for( $i = 0; $i < count( $product_images ); $i++ ) {
+			$img_src = wp_get_attachment_image_src( $product_images[$i], array(100, 100) );
+			$img_url[$i] = $img_src[0];
+		}
+
+		$js_data = array(
+			'buyer_name' 	=> get_option( 'wpfomo_buyer_name' ),
+			'purchase_time' => get_option( 'wpfomo_purchase_time' ),
+			'product_name' 	=> get_option( 'wpfomo_product_name' ),
+			'product_image' => $img_url,
+			'custom_url' 	=> get_option( 'wpfomo_url' ),
+		);
+		wp_localize_script( 'wpfomo-public-script', 'settings', $js_data );
 
 	}
 
