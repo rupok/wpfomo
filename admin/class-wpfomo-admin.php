@@ -131,7 +131,8 @@ class Wpfomo_Admin {
 		$show_image    		= get_option( 'wpfomo_show_image' );
 		// If No Image Uploaded
     	$default_image = 'https://cdn.shopify.com/s/files/1/1585/6515/files/boost_thumb.png';
-
+    	// Check if user template is blank?
+    	if( empty( $user_template ) ) : $user_template = '[name] has purchased [product] [time] '; else: $user_template; endif;
 		?>
 		<h2><?php _e( 'wpFomo Settings', 'wpfomo' ); ?></h2><hr>
 		<form action="options.php" method="post">
@@ -175,42 +176,46 @@ class Wpfomo_Admin {
 				        $value = '';
 				    }
 				?>
-    			<h2><?php $fomo = $i + 1; echo "Fomo ". $fomo; ?></h2>
-    			<table class="form-table" id="table-id-<?php echo $i; ?>" style="max-width:600px;">
-	    			<tr valign="top">
-	    				<th scope="row"><?php _e( 'Buyer Name', 'wpfomo' ); ?></th>
-	    				<td><input type="text" class="widefat" name="wpfomo_buyer_name[<?php echo $i; ?>]" value="<?php echo esc_attr( $buyer_name[$i] ); ?>"></td>
-	    			</tr>
-	    			<tr valign="top">
-	    				<th scope="row"><?php _e( 'Purchase Time', 'wpfomo' ); ?></th>
-	    				<td><input type="text" class="datepicker widefat" name="wpfomo_purchase_time[<?php echo $i; ?>]" value="<?php echo esc_attr( $purchase_time[$i] ); ?>"></td>
-	    			</tr>
-	    			<tr valign="top">
-	    				<th scope="row"><?php _e( 'Product Name', 'wpfomo' ); ?></th>
-	    				<td><input type="text" class="widefat" name="wpfomo_product_name[<?php echo $i; ?>]" value="<?php echo esc_attr( $product_name[$i] ); ?>"></td>
-	    			</tr>
-	    			<tr valign="top">
-	    				<th scope="row"><?php _e( 'Product Image URL', 'wpfomo' ); ?></th>
-	    				<td>
-	    					<div class="upload">
-					            <img data-src="<?php echo esc_url( $default_image ); ?>" src="<?php echo esc_url( $src ); ?>" width="100px" height="100px" />
-					            <div>
-					                <input type="hidden" name="wpfomo_product_image[<?php echo $i; ?>]" id="wpfomo_product_image[<?php echo $i; ?>]" value="<?php echo esc_attr( intval( $value ) ); ?>" />
-					                <button type="submit" class="upload_image_button button"><?php echo esc_html__( 'Upload', 'wpfomo' ) ?></button>
-					                <button type="submit" class="remove_image_button button"><?php echo esc_html__( 'Delete', 'wpfomo' ); ?></button>
-					            </div>
-					        </div>
-					    </td>
-	    			</tr>
-	    			<tr valign="top">
-	    				<th scope="row"><?php _e( 'URL', 'wpfomo' ); ?></th>
-	    				<td><input type="text" class="widefat" name="wpfomo_url[<?php echo $i; ?>]" value="<?php echo esc_url( $custom_url[$i] ); ?>"></td>
-	    				<td><input type="button" data-id="<?php echo $i; ?>" name="wpfomo_delete" class="button button-danger del-btn" value="<?php _e( 'Delete', 'wpfomo' ); ?>" /></td>
-	    			</tr>
-	    			<tr valign="top">
-	    				<td colspan="3" ><hr></td>
-	    			</tr>
-	    		</table>
+				<div id="table-id-<?php echo $i; ?>">
+	    			<h2><?php $fomo = $i + 1; echo "Fomo ". $fomo; ?></h2>
+	    			<table class="form-table" style="max-width:600px;">
+		    			<tr valign="top">
+		    				<th scope="row"><?php _e( 'Buyer Name', 'wpfomo' ); ?></th>
+		    				<td><input type="text" class="widefat" name="wpfomo_buyer_name[<?php echo $i; ?>]" value="<?php echo esc_attr( $buyer_name[$i] ); ?>"></td>
+		    			</tr>
+		    			<tr valign="top">
+		    				<th scope="row"><?php _e( 'Purchase Time', 'wpfomo' ); ?></th>
+		    				<td><input type="text" class="datepicker widefat" name="wpfomo_purchase_time[<?php echo $i; ?>]" value="<?php echo esc_attr( $purchase_time[$i] ); ?>"></td>
+		    			</tr>
+		    			<tr valign="top">
+		    				<th scope="row"><?php _e( 'Product Name', 'wpfomo' ); ?></th>
+		    				<td><input type="text" class="widefat" name="wpfomo_product_name[<?php echo $i; ?>]" value="<?php echo esc_attr( $product_name[$i] ); ?>"></td>
+		    			</tr>
+		    			<tr valign="top">
+		    				<th scope="row"><?php _e( 'Product Image URL', 'wpfomo' ); ?></th>
+		    				<td>
+		    					<div class="upload">
+						            <img data-src="<?php echo esc_url( $default_image ); ?>" src="<?php echo esc_url( $src ); ?>" width="100px" height="100px" />
+						            <div>
+						                <input type="hidden" name="wpfomo_product_image[<?php echo $i; ?>]" id="wpfomo_product_image[<?php echo $i; ?>]" value="<?php echo esc_attr( intval( $value ) ); ?>" />
+						                <button type="submit" class="upload_image_button button"><?php echo esc_html__( 'Upload', 'wpfomo' ) ?></button>
+						                <button type="submit" class="remove_image_button button"><?php echo esc_html__( 'Delete', 'wpfomo' ); ?></button>
+						            </div>
+						        </div>
+						    </td>
+		    			</tr>
+		    			<tr valign="top">
+		    				<th scope="row"><?php _e( 'URL', 'wpfomo' ); ?></th>
+		    				<td><input type="text" class="widefat" name="wpfomo_url[<?php echo $i; ?>]" value="<?php echo esc_url( $custom_url[$i] ); ?>"></td>
+		    			</tr>
+		    			<tr valign="top">
+		    				<td scope="row"><input type="button" data-id="<?php echo $i; ?>" name="wpfomo_delete" class="button button-danger del-btn" value="<?php _e( 'Delete Item', 'wpfomo' ); ?>" /></td>
+		    			</tr>
+		    			<tr valign="top">
+		    				<td colspan="3" ><hr></td>
+		    			</tr>
+		    		</table>
+	    		</div>
 	    		<?php } ?>
 	    		<div class="repeatable"></div>
 	    		<p><input type="button" value="<?php _e( 'Add New Section', 'wpfomo' ); ?>" class="button button-secondary add" /> <input type="submit" name="submit" class="button button-primary" value="<?php _e( 'Save Settings', 'wpfomo' ); ?>" /></p>

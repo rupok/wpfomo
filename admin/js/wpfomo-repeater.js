@@ -45,7 +45,9 @@
                 string_html += '<tr valign="top">';
                 string_html += '<th scope="row">URL</th>';
                 string_html += '<td><input type="text" class="widefat" name="wpfomo_url['+x+']" value=""></td>';
-                string_html += '<td><input type="button" data-id="'+x+'" class="button button-danger remove_field" value="Remove" /></td>';
+                string_html += '</tr>';
+                string_html += '<tr valign="top">';
+                string_html += '<td><input type="button" data-id="'+x+'" class="button button-danger remove_field" value="Remove Item" /></td>';
                 string_html += '</tr>';
                 string_html += '<tr valign="top">';
                 string_html += '<td colspan="3" ><hr></td>';
