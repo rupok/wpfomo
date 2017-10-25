@@ -110,6 +110,8 @@ class Wpfomo_Admin {
 		register_setting( 'wpfomo-settings-group', 'wpfomo_product_image' ); 
 		register_setting( 'wpfomo-settings-group', 'wpfomo_product_image_src' ); 
 		register_setting( 'wpfomo-settings-group', 'wpfomo_url' ); 
+		register_setting( 'wpfomo-settings-group', 'wpfomo_user_template' ); 
+		register_setting( 'wpfomo-settings-group', 'wpfomo_show_image' ); 
 		
 	}
 
@@ -119,20 +121,48 @@ class Wpfomo_Admin {
 	 */
 	public function wpfomo_settings_page() {
 
-		$buyer_name 	= array_values( (array) get_option( 'wpfomo_buyer_name' ) );
-		$purchase_time 	= array_values( (array) get_option( 'wpfomo_purchase_time' ) );
-		$product_name 	= array_values( (array) get_option( 'wpfomo_product_name' ) );
-		$product_image 	= array_values( (array) get_option( 'wpfomo_product_image' ) );
+		$buyer_name 		= array_values( (array) get_option( 'wpfomo_buyer_name' ) );
+		$purchase_time 		= array_values( (array) get_option( 'wpfomo_purchase_time' ) );
+		$product_name 		= array_values( (array) get_option( 'wpfomo_product_name' ) );
+		$product_image 		= array_values( (array) get_option( 'wpfomo_product_image' ) );
 		$product_image_src 	= array_values( (array) get_option( 'wpfomo_product_image_src' ) );
-		$custom_url 	= array_values( (array) get_option( 'wpfomo_url' ) );
+		$custom_url 		= array_values( (array) get_option( 'wpfomo_url' ) );
+		$user_template    	= get_option( 'wpfomo_user_template' );
+		$show_image    		= get_option( 'wpfomo_show_image' );
 		// If No Image Uploaded
     	$default_image = 'https://cdn.shopify.com/s/files/1/1585/6515/files/boost_thumb.png';
 
 		?>
-		<h2>wpFomo Settings</h2><hr>
+		<h2><?php _e( 'wpFomo Settings', 'wpfomo' ); ?></h2><hr>
 		<form action="options.php" method="post">
 			<?php settings_fields( 'wpfomo-settings-group' ); ?>
     		<?php do_settings_sections( 'wpfomo-settings-group' ); ?>
+    		<div class="wpfomo-template">
+    			<table class="form-table" style="max-width:600px;">
+    				<tr valign="top">
+    					<th scope="row"><?php _e( 'Template', 'wpfomo' ); ?></th>
+    					<td>
+    						<textarea name="wpfomo_user_template" class="widefat" rows="4"><?php echo esc_html__( $user_template, 'wpfomo' ); ?></textarea>
+    						<p class="description">Variables: [name], [product], [time]</p>
+    					</td>
+    				</tr>
+    				<tr valign="top">
+    					<th scope="row">
+    						<?php _e( 'Show Image', 'wofomo' ); ?>
+    						<p class="description"><?php _e( 'This will show product thumbnail image.', 'wofomo' ); ?></p>
+    					</th>
+    					<td>
+    						<input type="checkbox" name="wpfomo_show_image" value="1" <?php checked( 1, get_option( 'wpfomo_show_image' ), true); ?> />
+    					</td>
+    				</tr>
+    				<tr valign="top">
+    					<td><input type="submit" name="submit" class="button button-primary" value="<?php _e( 'Save Settings', 'wpfomo' ); ?>" /></td>
+    				</tr>
+	    			<tr valign="top">
+	    				<td colspan="3" ><hr></td>
+	    			</tr>
+    			</table>
+    		</div>
     		<div class="wpfomo-settings">
     			<?php for( $i = 0; $i < count( $buyer_name ); $i++ ) { ?>
 				<?php 
@@ -183,7 +213,7 @@ class Wpfomo_Admin {
 	    		</table>
 	    		<?php } ?>
 	    		<div class="repeatable"></div>
-	    		<p><input type="button" value="<?php _e( 'Add New Section', 'wpfomo' ); ?>" class="button button-secondary add" /> <input type="submit" name="submit" class="button button-primary" value="<?php _e( 'Save', 'wpfomo' ); ?>" /></p>
+	    		<p><input type="button" value="<?php _e( 'Add New Section', 'wpfomo' ); ?>" class="button button-secondary add" /> <input type="submit" name="submit" class="button button-primary" value="<?php _e( 'Save Settings', 'wpfomo' ); ?>" /></p>
     		</div>
 		</form>
 		<?php

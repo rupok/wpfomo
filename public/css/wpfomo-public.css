@@ -30,7 +30,8 @@
   left: 25%;
   padding-left: 10px;
 }
-#wpfomo .wpfomo-content-wrapper .wpfomo-buyer {
+#wpfomo .wpfomo-content-wrapper,
+#wpfomo .wpfomo-content-wrapper .wpfomo-buyer-name {
   font-size: 13px;
 }
 #wpfomo .wpfomo-content-wrapper .wpfomo-product-name {
