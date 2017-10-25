@@ -16,7 +16,7 @@
 function wpfomo_add_content() {
 	$wpfomo_show_image = get_option( 'wpfomo_show_image' );
 	if( 1 == $wpfomo_show_image ) {
-		$wpfomo_image = '<img src="" class="wpfomo-product-thumb">';
+		$wpfomo_image = '<div class="wpfomo-product-thumb-container"><img src="" class="wpfomo-product-thumb"></div>';
 	}else {
 		$wpfomo_image = '';
 	}

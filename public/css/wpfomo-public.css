@@ -18,9 +18,14 @@
   bottom: 15px;
   left: 15px;
 }
-#wpfomo .wpfomo-product-thumb {
+
+.wpfomo-product-thumb-container {
   width: 85px;
   padding-right: 5px;
+}
+
+#wpfomo .wpfomo-product-thumb {
+  width: 100%;
 }
 #wpfomo .wpfomo-content-wrapper {
   display: flex;
