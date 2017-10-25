@@ -77,7 +77,12 @@ class Wpfomo_Public {
 		$product_images = get_option( 'wpfomo_product_image' );
 		for( $i = 0; $i < count( $product_images ); $i++ ) {
 			$img_src = wp_get_attachment_image_src( $product_images[$i], array(100, 100) );
-			$img_url[$i] = $img_src[0];
+			if( !empty( $img_src ) ) {
+				$img_url[$i] = $img_src[0];
+			}else {
+				$img_url[$i] = 'https://cdn.shopify.com/s/files/1/1585/6515/files/boost_thumb.png';
+			}
+			
 		}
 
 		$js_data = array(
