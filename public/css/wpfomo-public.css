@@ -8,6 +8,10 @@
   min-height: 80px;
   width: 350px;
   z-index: 9999;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  -webkit-transition: all 400ms;
   transition: all 400ms;
 }
 #wpfomo.is-visible {
@@ -15,31 +19,35 @@
   left: 15px;
 }
 #wpfomo .wpfomo-product-thumb {
-  width: 22%;
-  height: 100%;
-  border-right: 3px solid #f4f4f4;
+  width: 85px;
+  padding-right: 5px;
 }
 #wpfomo .wpfomo-content-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 75%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 25%;
-  padding-left: 10px;
+  align-content: center;
+  padding: 8px;
 }
+
+.wpfomo-content-wrapper p {
+  margin: 0;
+}
+
 #wpfomo .wpfomo-content-wrapper,
 #wpfomo .wpfomo-content-wrapper .wpfomo-buyer-name {
   font-size: 13px;
 }
+.wpfomo-buyer-name {
+  font-weight: bolder;
+}
 #wpfomo .wpfomo-content-wrapper .wpfomo-product-name {
-  font-weight: 600;
+  font-weight: bolder;
   text-decoration: none;
-  color: #00bf42;
+  color: #333;
   line-height: 2;
+  font-size: 1.1em;
 }
 #wpfomo .wpfomo-content-wrapper .time {
-  font-size: 13px;
+  font-size: .8em;
 }
