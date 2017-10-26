@@ -6,11 +6,11 @@
  * @package           Wpfomo
  *
  * @wordpress-plugin
- * Plugin Name:       WPfomo
+ * Plugin Name:       WPFomo
  * Plugin URI:        https://wpdeveloper.net/wpfomo
- * Description:       Show notification on WordPress site.
+ * Description:       Show fomo notification on WordPress site.
  * Version:           1.0.0
- * Author:            WP Developer
+ * Author:            WPDeveloper
  * Author URI:        https://wpdeveloper.net
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt

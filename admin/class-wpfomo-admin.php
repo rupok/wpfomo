@@ -152,7 +152,7 @@ class Wpfomo_Admin {
 	    				<tr valign="top">
 	    					<th scope="row">
 	    						<?php _e( 'Show Image', 'wofomo' ); ?>
-	    						<p class="description"><?php _e( 'This will show product thumbnail image.', 'wofomo' ); ?></p>
+	    						<p class="description"><?php _e( 'This will show the thumbnail image.', 'wofomo' ); ?></p>
 	    					</th>
 	    					<td>
 	    						<input type="checkbox" name="wpfomo_show_image" value="1" <?php checked( 1, get_option( 'wpfomo_show_image' ), true); ?> />
@@ -180,11 +180,11 @@ class Wpfomo_Admin {
 		    			<table class="form-table" style="max-width:600px;">
 			    			<tr valign="top">
 			    				<th scope="row"><?php _e( 'Primary Text', 'wpfomo' ); ?></th>
-			    				<td><input type="text" class="widefat" name="wpfomo_primary_text[<?php echo $i; ?>]" value="<?php echo esc_attr( $buyer_name[$i] ); ?>"></td>
+			    				<td><input type="text" class="widefat" placeholder="Someone" name="wpfomo_primary_text[<?php echo $i; ?>]" value="<?php echo esc_attr( $buyer_name[$i] ); ?>"></td>
 			    			</tr>
 			    			<tr valign="top">
 			    				<th scope="row"><?php _e( 'Link Text', 'wpfomo' ); ?></th>
-			    				<td><input type="text" class="widefat" name="wpfomo_link_text[<?php echo $i; ?>]" value="<?php echo esc_attr( $product_name[$i] ); ?>"></td>
+			    				<td><input type="text" class="widefat" placeholder="Something Cool" name="wpfomo_link_text[<?php echo $i; ?>]" value="<?php echo esc_attr( $product_name[$i] ); ?>"></td>
 			    			</tr>
 			    			<tr valign="top">
 			    				<th scope="row"><?php _e( 'Link URL', 'wpfomo' ); ?></th>
