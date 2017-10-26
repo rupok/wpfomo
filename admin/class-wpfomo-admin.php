@@ -132,7 +132,7 @@ class Wpfomo_Admin {
 		// If No Image Uploaded
     	$default_image =  plugins_url( '/', __FILE__ ).'/images/wpfomo-logo.png';
     	// Check if user template is blank?
-    	if( empty( $user_template ) ) : $user_template = '[primary_text] has purchased [link_text][secondary_text]'; else: $user_template; endif;
+    	if( empty( $user_template ) ) : $user_template = '[primary_text] did something [link_text][secondary_text]'; else: $user_template; endif;
 		?>
 
 		<div class="wpfomo-settings-container">
@@ -187,7 +187,7 @@ class Wpfomo_Admin {
 			    				<td><input type="text" class="widefat" name="wpfomo_link_text[<?php echo $i; ?>]" value="<?php echo esc_attr( $product_name[$i] ); ?>"></td>
 			    			</tr>
 			    			<tr valign="top">
-			    				<th scope="row"><?php _e( 'Link Url', 'wpfomo' ); ?></th>
+			    				<th scope="row"><?php _e( 'Link URL', 'wpfomo' ); ?></th>
 			    				<td><input type="text" class="widefat" name="wpfomo_url[<?php echo $i; ?>]" value="<?php echo esc_url( $custom_url[$i] ); ?>"></td>
 			    			</tr>
 			    			<tr valign="top">
