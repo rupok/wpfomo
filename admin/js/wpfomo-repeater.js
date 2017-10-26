@@ -7,7 +7,7 @@
     var x = repeater.start - 1; //initlal text box count
 
     // Media Uploader Assets
-    var defaultImage = 'https://cdn.shopify.com/s/files/1/1585/6515/files/boost_thumb.png';
+    var defaultImage = 'http://via.placeholder.com/100/E51B23/fff?text=WPFomo';
 
     $(add_button).click(function(e){ //on add input button click
         e.preventDefault();
@@ -47,7 +47,7 @@
                 string_html += '<td><input type="text" class="widefat" name="wpfomo_secondary_text['+x+']" value=""></td>';
                 string_html += '</tr>';
                 string_html += '<tr valign="top">';
-                string_html += '<td><input type="button" data-id="'+x+'" class="button button-danger remove_field" value="Remove Item" /></td>';
+                string_html += '<td><input type="button" data-id="'+x+'" class="button wpfomo-delete-btn button-danger remove_field" value="Remove Item" /></td>';
                 string_html += '</tr>';
                 string_html += '<tr valign="top">';
                 string_html += '<td colspan="3" ><hr></td>';

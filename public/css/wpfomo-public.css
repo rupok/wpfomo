@@ -6,7 +6,8 @@
   bottom: -110px;
   left: 15px;
   min-height: 80px;
-  width: 350px;
+  min-width: 330px;
+  max-width: 90%;
   z-index: 9999;
   display: flex;
   align-content: center;
@@ -28,6 +29,7 @@
   width: 100%;
 }
 #wpfomo .wpfomo-content-wrapper {
+  color: #4d4d4d;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -49,7 +51,7 @@
 #wpfomo .wpfomo-content-wrapper .wpfomo-product-name {
   font-weight: bolder;
   text-decoration: none;
-  color: #333;
+  color: #262625;
   line-height: 2;
   font-size: 1.1em;
 }

@@ -80,7 +80,7 @@ class Wpfomo_Public {
 			if( !empty( $img_src ) ) {
 				$img_url[$i] = $img_src[0];
 			}else {
-				$img_url[$i] = 'https://cdn.shopify.com/s/files/1/1585/6515/files/boost_thumb.png';
+				$img_url[$i] = plugins_url( '/', __FILE__ ).'/images/wpfomo-logo.png';
 			}
 			
 		}
