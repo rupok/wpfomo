@@ -30,35 +30,33 @@ function wpfomo_add_content() {
 add_action('wp_footer', 'wpfomo_add_content');
 
 /**
- * Buyer Name Shortcode
+ * Primary Text Shortcode
  */
-function wpfomo_name_shortcode( $atts ) {
+function wpfomo_primary_text_shortcode( $atts ) {
 
-	return '<span class="wpfomo-buyer-name"></span>';
+	return '<p><span class="wpfomo-buyer-name"></span>';
 
 }
-add_shortcode( 'name', 'wpfomo_name_shortcode' );
+add_shortcode( 'primary_text', 'wpfomo_primary_text_shortcode' );
 
 /**
- * Product Name Shortcode
+ * Link Text Shortcode
  */
-function wpfomo_product_name_shortcode( $atts ) {
+function wpfomo_link_text_shortcode( $atts ) {
 
-	return '<a href="#" target="_blank" class="wpfomo-product-name"></a>';
+	return '</p><a href="#" target="_blank" class="wpfomo-product-name"></a>';
 
 }
-add_shortcode( 'product', 'wpfomo_product_name_shortcode' );
+add_shortcode( 'link_text', 'wpfomo_link_text_shortcode' );
 
 /**
- * Purchase Time Shortcode
+ * Secondary Text Shortcode
  */
-function wpfomo_purchase_time_shortcode( $atts ) {
+function wpfomo_secondary_text_shortcode( $atts ) {
 
 	return '<div class="time">
-			    <span class="number"></span>
-			    	<span class="type"></span>
-			    <span>ago</span>
-			</div>';
+		<span class="wpfomo-secondary-text"></span>
+	</div>';
 
 }
-add_shortcode( 'time', 'wpfomo_purchase_time_shortcode' );
+add_shortcode( 'secondary_text', 'wpfomo_secondary_text_shortcode' );

@@ -18,24 +18,24 @@
             	string_html += '<h2>Fomo '+titleCounter+'</h2>';
             	string_html += '<table class="form-table" style="max-width: 600px;">';
                 string_html += '<tr valign="top">';
-                string_html += '<th scope="row">Buyer Name</th>';
-                string_html += '<td><input type="text" class="widefat" name="wpfomo_buyer_name['+x+']" value=""></td>';
+                string_html += '<th scope="row">Primary Text</th>';
+                string_html += '<td><input type="text" class="widefat" name="wpfomo_primary_text['+x+']" value=""></td>';
                 string_html += '</tr>';
                 string_html += '<tr valign="top">';
-                string_html += '<th scope="row">Purchase Time</th>';
-                string_html += '<td><input type="text" class="datepicker widefat" name="wpfomo_purchase_time['+x+']" value=""></td>';
+                string_html += '<th scope="row">Link Text</th>';
+                string_html += '<td><input type="text" class="widefat" name="wpfomo_link_text['+x+']" value=""></td>';
                 string_html += '</tr>';
                 string_html += '<tr valign="top">';
-                string_html += '<th scope="row">Product Name</th>';
-                string_html += '<td><input type="text" class="widefat" name="wpfomo_product_name['+x+']" value=""></td>';
+                string_html += '<th scope="row">Link Url</th>';
+                string_html += '<td><input type="text" class="widefat" name="wpfomo_url['+x+']" value=""></td>';
                 string_html += '</tr>';
                 string_html += '<tr valign="top">';
-                string_html += '<th scope="row">Product Image URL</th>';
+                string_html += '<th scope="row">Upload Image</th>';
                 string_html += '<td>';
                 string_html += '<div class="upload">';
                 string_html += '<img data-src="'+defaultImage+'" src="'+defaultImage+'" width="100px" height="100px" />';
                 string_html += '<div>';
-                string_html += '<input type="hidden" name="wpfomo_product_image['+x+']" id="wpfomo_product_image['+x+']" value="" />';
+                string_html += '<input type="hidden" name="wpfomo_image_url['+x+']" id="wpfomo_image_url['+x+']" value="" />';
                 string_html += '<button type="submit" class="upload_image_button button">Upload</button>';
                 string_html += '<button type="submit" class="remove_image_button button">Delete</button>';
                 string_html += '</div>';
@@ -43,8 +43,8 @@
                 string_html += '</td>';
                 string_html += '</tr>';
                 string_html += '<tr valign="top">';
-                string_html += '<th scope="row">URL</th>';
-                string_html += '<td><input type="text" class="widefat" name="wpfomo_url['+x+']" value=""></td>';
+                string_html += '<th scope="row">Secondary Text</th>';
+                string_html += '<td><input type="text" class="widefat" name="wpfomo_secondary_text['+x+']" value=""></td>';
                 string_html += '</tr>';
                 string_html += '<tr valign="top">';
                 string_html += '<td><input type="button" data-id="'+x+'" class="button button-danger remove_field" value="Remove Item" /></td>';
@@ -56,7 +56,6 @@
                 string_html += '</div>';
                 
             $(wrapper).append(string_html); //add input box
-            $('.datepicker').datepicker();
             /**
 			 * Media Uploader
 			 */

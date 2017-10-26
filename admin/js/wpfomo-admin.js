@@ -2,11 +2,6 @@
 	'use strict';
 
 	/**
-	 * Enable Datepicker
-	 */
-	$('html .datepicker').datepicker();
-
-	/**
 	* Delete Button
 	*/
 	var delButton = $('.del-btn');

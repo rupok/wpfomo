@@ -74,7 +74,7 @@ class Wpfomo_Public {
 
 		wp_enqueue_script( 'wpfomo-public-script', plugin_dir_url( __FILE__ ) . 'js/wpfomo-public.js', array( 'jquery' ), $this->version, false );
 
-		$product_images = get_option( 'wpfomo_product_image' );
+		$product_images = get_option( 'wpfomo_image_url' );
 		for( $i = 0; $i < count( $product_images ); $i++ ) {
 			$img_src = wp_get_attachment_image_src( $product_images[$i], array(100, 100) );
 			if( !empty( $img_src ) ) {
@@ -86,9 +86,9 @@ class Wpfomo_Public {
 		}
 
 		$js_data = array(
-			'buyer_name' 	=> get_option( 'wpfomo_buyer_name' ),
-			'purchase_time' => get_option( 'wpfomo_purchase_time' ),
-			'product_name' 	=> get_option( 'wpfomo_product_name' ),
+			'buyer_name' 	=> get_option( 'wpfomo_primary_text' ),
+			'purchase_time' => get_option( 'wpfomo_secondary_text' ),
+			'product_name' 	=> get_option( 'wpfomo_link_text' ),
 			'product_image' => $img_url,
 			'custom_url' 	=> get_option( 'wpfomo_url' ),
 		);
