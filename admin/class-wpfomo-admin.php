@@ -88,14 +88,14 @@ class Wpfomo_Admin {
 	 */
 	public function create_wpfomo_admin_page() {
 
-		add_menu_page( 
-			'WPFomo', 
-			'WPFomo', 
-			'manage_options', 
-			'wpfomo-settings-page', 
-			array( $this, 'wpfomo_settings_page' ), 
+		add_menu_page(
+			'WPFomo',
+			'WPFomo',
+			'manage_options',
+			'wpfomo-settings-page',
+			array( $this, 'wpfomo_settings_page' ),
 			'',
-			199  
+			199
 		);
 
 	}
@@ -104,15 +104,15 @@ class Wpfomo_Admin {
 	 */
 	public function wpfomo_register_settings() {
 
-		register_setting( 'wpfomo-settings-group', 'wpfomo_primary_text' ); 
-		register_setting( 'wpfomo-settings-group', 'wpfomo_secondary_text' ); 
-		register_setting( 'wpfomo-settings-group', 'wpfomo_link_text' ); 
-		register_setting( 'wpfomo-settings-group', 'wpfomo_image_url' ); 
-		register_setting( 'wpfomo-settings-group', 'wpfomo_image_url_src' ); 
-		register_setting( 'wpfomo-settings-group', 'wpfomo_url' ); 
-		register_setting( 'wpfomo-settings-group', 'wpfomo_user_template' ); 
-		register_setting( 'wpfomo-settings-group', 'wpfomo_show_image' ); 
-		
+		register_setting( 'wpfomo-settings-group', 'wpfomo_primary_text' );
+		register_setting( 'wpfomo-settings-group', 'wpfomo_secondary_text' );
+		register_setting( 'wpfomo-settings-group', 'wpfomo_link_text' );
+		register_setting( 'wpfomo-settings-group', 'wpfomo_image_url' );
+		register_setting( 'wpfomo-settings-group', 'wpfomo_image_url_src' );
+		register_setting( 'wpfomo-settings-group', 'wpfomo_url' );
+		register_setting( 'wpfomo-settings-group', 'wpfomo_user_template' );
+		register_setting( 'wpfomo-settings-group', 'wpfomo_show_image' );
+
 	}
 
 
@@ -165,7 +165,7 @@ class Wpfomo_Admin {
 	    		</div>
 	    		<div class="wpfomo-settings">
 	    			<?php for( $i = 0; $i < count( $buyer_name ); $i++ ) { ?>
-					<?php 
+					<?php
 					if ( !empty( $product_image[$i] ) ) {
 					        $image_attributes = wp_get_attachment_image_src( $product_image[$i], array( 100, 100 ) );
 					        $src = $image_attributes[0];
