@@ -2,14 +2,14 @@
 
 /**
  * @link              https://wpdeveloper.net
- * @since             1.0.0
+ * @since             1.1.0
  * @package           Wpfomo
  *
  * @wordpress-plugin
  * Plugin Name:       WPFomo
  * Plugin URI:        https://wpdeveloper.net/wpfomo
  * Description:       Show fomo notification on WordPress site.
- * Version:           1.0.0
+ * Version:           1.1.0
  * Author:            WPDeveloper
  * Author URI:        https://wpdeveloper.net
  * License:           GPL-2.0+
@@ -23,7 +23,7 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-define( 'WPFOMO_VERSION', '1.0.0' );
+define( 'WPFOMO_VERSION', '1.1.0' );
 
 /**
  * The code that runs during plugin activation.
@@ -51,6 +51,45 @@ register_deactivation_hook( __FILE__, 'deactivate_wpfomo' );
  * admin-specific hooks, and public-facing site hooks.
  */
 require plugin_dir_path( __FILE__ ) . 'includes/class-wpfomo.php';
+
+include_once plugin_dir_path( __FILE__ ) . '/includes/notificationx-installer.php';
+new Nx_Installer('');
+
+
+/**
+ * Admin Notices
+ */
+
+
+function wpfomo_admin_notice() {
+  if ( current_user_can( 'install_plugins' ) && !class_exists( 'NotificationX' ) ) {
+    global $current_user ;
+    $user_id = $current_user->ID;
+    /* Check that the user hasn't already clicked to ignore the message */
+    if ( ! get_user_meta($user_id, 'wpfomo_ignore_notice110') ) {
+      echo '<div class="notice notice-info updated" style="display: flex; align-items: center; justify-content: space-between;">';
+      printf(__('<p><strong>WPFomo</strong> is outdated! We have released better plugin <a href="https://notificationx.com" target="_blank">NotificationX</a> with with most advanced features. <button id="nx-installer-btn" class="button button-primary">Install Now!</button></p>
+        <p><a href="%1$s" style="text-decoration: none;"><span class="dashicons dashicons-dismiss"></span></a></p>'),  admin_url( '/?wpfomo_nag_ignore=0' ));
+      echo "</div>";
+    }
+  }
+}
+add_action('admin_notices', 'wpfomo_admin_notice');
+
+
+/**
+ * Nag Ignore
+ */
+function wpfomo_nag_ignore() {
+  global $current_user;
+        $user_id = $current_user->ID;
+        /* If user clicks to ignore the notice, add that to their user meta */
+        if ( isset($_GET['wpfomo_nag_ignore']) && '0' == $_GET['wpfomo_nag_ignore'] ) {
+             add_user_meta($user_id, 'wpfomo_ignore_notice110', 'true', true);
+  }
+}
+add_action('admin_init', 'wpfomo_nag_ignore');
+
 
 /**
  * Begins execution of the plugin.

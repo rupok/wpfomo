@@ -3,14 +3,16 @@ Contributors: re_enter_rupok, Asif2BD
 Donate link: https://wpdeveloper.net
 Tags: fomo, notifier, fomo notification
 Requires at least: 4.0
-Tested up to: 4.8.2
-Stable tag: 1.0.0
+Tested up to: 5.1
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Fomo notification for WordPress.
 
 == Description ==
+
+Check the advanced version [NotificationX](https://wordpress.org/plugins/notificationx/) for more features.
 
 This is a simple plugin, does a very interesting task. Activate this plugin, it will create a viral effect on your site.
 
@@ -28,11 +30,12 @@ Just activate the plugin, head over to the WPFomo setting menu, add your message
 
 **Check Our Other Plugins:**
 
+* **[NotificationX](https://wordpress.org/plugins/notificationx/)** 
+* **[Essential Addons For Elementor](https://wordpress.org/plugins/essential-addons-for-elementor-lite/)** 
+* **[WP Scheduled Posts](https://wordpress.org/plugins/wp-scheduled-posts/)**
 * **[Twitter Cards Meta](https://wordpress.org/plugins/twitter-cards-meta/)** 
 * **[Facebook Secret Meta](https://wordpress.org/plugins/facebook-secret-meta/)** 
-* **[Essential Addons For Elementor](https://wordpress.org/plugins/essential-addons-for-elementor-lite/)** 
-* **[Analytify - Ultimate Google Analytics Dashboard](https://wordpress.org/plugins/wp-analytify/)**
-* **[WP Scheduled Posts](https://wordpress.org/plugins/wp-scheduled-posts/)**
+
 == Installation ==
 
 = Modern Way: =
@@ -60,6 +63,10 @@ Yes. After activating, headover to the WPFomo setting menu, add your messages, a
 
 
 == Changelog ==
+
+= 1.1.0 =
+* Few bugfix and improvements
+* Update message added for advanced version (NotificationX)
 
 = 1.0.0 =
 * A initial release.
